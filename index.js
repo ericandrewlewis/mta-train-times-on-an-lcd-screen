@@ -33,12 +33,13 @@ board.on("ready", function() {
         return;
       }
 
-      var northboundArrivals = result['schedule'][stopID]['N'].slice(0,2);
+      var northboundArrivals = result['schedule'][stopID]['N'];
       var now = new Date();
       lcd.clear()
         .cursor(0, 0)
         .print("Next trains:");
       var text = '';
+      northboundArrivals = northboundArrivals.filter(function(arrival) { return new Date( arrival.departureTime * 1000 ) > now }).slice(0,2);
       northboundArrivals.forEach(function( arrival ) {
         var departureTime = new Date( arrival.departureTime * 1000 );
         var difference = Math.round( ( ( departureTime - now ) / 1000 ) / 60 );
