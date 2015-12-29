@@ -11,6 +11,8 @@
 
 ## Run
 
+Set up the Arduino [like this](https://github.com/rwaldron/johnny-five/blob/master/docs/lcd.md).
+
 Install submodules
 
 ```sh
