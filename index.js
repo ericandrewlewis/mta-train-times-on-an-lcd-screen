@@ -1,10 +1,11 @@
-var five = require("johnny-five"),
+var config = require('./config'),
+  five = require("johnny-five"),
   Mta = require('mta-gtfs'),
   mta, board, lcd;
 
 board = new five.Board();
 mta = new Mta({
-  key: '{{key here}}', // only needed for mta.schedule() method
+  key: config.apiKey, // only needed for mta.schedule() method
   feed_id: 1                  // optional, default = 1
 });
 
@@ -37,7 +38,7 @@ board.on("ready", function() {
       var now = new Date();
       lcd.clear()
         .cursor(0, 0)
-        .print("Next trains:");
+        .print("eggs:");
       var text = '';
       northboundArrivals = northboundArrivals.filter(function(arrival) { return new Date( arrival.departureTime * 1000 ) > now }).slice(0,2);
       northboundArrivals.forEach(function( arrival ) {
