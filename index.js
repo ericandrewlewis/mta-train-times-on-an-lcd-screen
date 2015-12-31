@@ -38,7 +38,7 @@ board.on("ready", function() {
       var now = new Date();
       lcd.clear()
         .cursor(0, 0)
-        .print("eggs:");
+        .print("Trains arrive in:");
       var text = '';
       northboundArrivals = northboundArrivals.filter(function(arrival) { return new Date( arrival.departureTime * 1000 ) > now }).slice(0,2);
       northboundArrivals.forEach(function( arrival ) {
