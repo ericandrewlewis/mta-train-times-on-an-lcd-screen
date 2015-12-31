@@ -3,7 +3,7 @@
 ## Requires
 
 * Arduino
-* hookup cables
+* Hookup cables
 * 10k potentiometer
 * 16x2 Character LCD screen (like [this one](https://www.sparkfun.com/products/255))
 * Solder + gun
@@ -11,18 +11,28 @@
 
 ## Run
 
-Set up the Arduino [like this](https://github.com/rwaldron/johnny-five/blob/master/docs/lcd.md).
+### Setup the Aruino
 
-Install submodules
+[Like this](https://github.com/rwaldron/johnny-five/blob/master/docs/lcd.md).
+
+### Get an API key + create `config.js`
+
+[Register for access to the MTA data feed](http://datamine.mta.info/), and note your developer API key.
+
+Create a `config.js` file, based on `config.js.example`, and fill in your API key.
+
+### Install submodules
 
 ```sh
 npm install
 ```
 
-In the Arduino IDE, navigate to `File > Examples > Firmata > Simple Firmata`, and upload
-the program to the arduino.
+### Upload Simple Firmata on the Arduino
 
-Run the program
+In the Arduino IDE, navigate to `File > Examples > Firmata > Simple Firmata`, and upload
+the program to the Arduino.
+
+### Run the program
 
 ```sh
 node index.js
