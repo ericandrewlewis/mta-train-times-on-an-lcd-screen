@@ -11,7 +11,7 @@
 
 ## Run
 
-### Setup the Aruino
+### Setup the Arduino
 
 [Like this](https://github.com/rwaldron/johnny-five/blob/master/docs/lcd.md).
 
